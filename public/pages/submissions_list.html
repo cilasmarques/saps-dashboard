@@ -205,36 +205,33 @@
           <div id="panel-body-completed" class="panel-body sb-hidden">
             <div id="table-div-completed">
               <!-- message listings table -->
-              <table id="image-table-completed" class="saps-table table" ng-table="ls.completedTasks">
-                <tbody>
-                  <tr ng-repeat="i in $data">
-                    <!-- <td>
-                      <input type="checkbox" class="checkbox-submission-list" ng-model="i.checked" />
-                    </td> -->
-                    <td title="languageContent.submissionsList.table.date" sortable="'imageDate'">
-                      {{i.imageDate}}
-                    </td>
-                    <td title="languageContent.submissionsList.table.dataset" sortable="'dataset'">
-                      {{i.dataset}}
-                    </td>
-                    <td title="languageContent.submissionsList.table.landsatTile" sortable="'taskId'">
-                      {{i.region}}
-                    </td>
-                    <td title="languageContent.submissionsList.table.inputGathering" sortable="'inputGatheringTag'">
-                      {{i.inputGatheringTag}}
-                    </td>
-                    <td title="languageContent.submissionsList.table.inputPreprocessing" sortable="'inputPreprocessingTag'">
-                      {{i.inputPreprocessingTag}}
-                    </td>
-                    <td title="languageContent.submissionsList.table.algorithmExecution" sortable="'algorithmExecutionTag'">
-                      {{i.algorithmExecutionTag}}
-                    </td>
-                    <td title="languageContent.submissionsList.table.state" sortable="'state'">
-                      {{i.state}}
-                      <span ng-show="i.state == 'error'" class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-                    </td>
-                  </tr>
-                </tbody>
+              <table ng-table="ls.tableParams" show-filter="true" class="saps-table table table-bordered table-striped">
+                <tr ng-repeat="i in $data">
+                  <!-- <td>
+                    <input type="checkbox" class="checkbox-submission-list" ng-model="i.checked" />                  </td> -->
+                  <td title="languageContent.submissionsList.table.date" sortable="'imageDate'">
+                    {{i.imageDate}}
+                  </td>
+                  <td title="languageContent.submissionsList.table.dataset" sortable="'dataset'">
+                    {{i.dataset}}
+                  </td>
+                  <td title="languageContent.submissionsList.table.landsatTile" sortable="'taskId'">
+                    {{i.region}}
+                  </td>
+                  <td title="languageContent.submissionsList.table.inputGathering" sortable="'inputGatheringTag'">
+                    {{i.inputGatheringTag}}
+                  </td>
+                  <td title="languageContent.submissionsList.table.inputPreprocessing" sortable="'inputPreprocessingTag'">
+                    {{i.inputPreprocessingTag}}
+                  </td>
+                  <td title="languageContent.submissionsList.table.algorithmExecution" sortable="'algorithmExecutionTag'">
+                    {{i.algorithmExecutionTag}}
+                  </td>
+                  <td title="languageContent.submissionsList.table.state" sortable="'state'">
+                    {{i.state}}
+                    <span ng-show="i.state == 'error'" class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                  </td>
+                </tr>
               </table>
             </div>
           </div>

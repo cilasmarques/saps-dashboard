@@ -265,13 +265,16 @@ dashboardServices.service('SubmissionService', function ($log, $http,
     var resourceUrl = appConfig.urlSapsService + appConfig.submissionPath;
     var submissionService = {};
 
-    submissionService.getSubmissions = function (successCallback, errorCallback) {
-        var headerCredentials = AuthenticationService.getHeaderCredentials();
+    submissionService.getSubmissions = function (paginationParams, successCallback, errorCallback) {
+        var headerCredentials = { 
+          ...AuthenticationService.getHeaderCredentials(),
+          ...paginationParams
+        };
 
-        $http.get(resourceUrl, {
+        return $http.get(resourceUrl, {
             headers: headerCredentials
         })
-            .then(successCallback, errorCallback);
+        .then(successCallback, errorCallback);
     };
 
     submissionService.postSubmission = function (dataForm, successCallback, errorCalback) {
